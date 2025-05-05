@@ -12,7 +12,9 @@ nav {
   grid-template-columns: 2fr 4fr 0.4fr;
   align-items: center;
   padding: 1vw 1vw;
-  background-color: rgb(125, 169, 234);
+  /* background-color: rgb(125, 169, 234); */
+  background: #554af0;
+  background: linear-gradient(90deg, rgba(85, 74, 240, 1) 0%, rgba(73, 73, 201, 1) 35%, rgba(255, 0, 89, 1) 100%);
 }
 .pages {
   display: flex;
