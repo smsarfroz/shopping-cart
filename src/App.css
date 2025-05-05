@@ -19,7 +19,7 @@ nav {
   gap: 4vw;
 }
 * {
-  outline: 2px dotted red;
+  /* outline: 2px dotted red; */
 }
 .link {
   text-decoration: none;

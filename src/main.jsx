@@ -6,12 +6,17 @@ import App from './App.jsx'
 import Shop from './Shop.jsx';
 import Cart from './Cart.jsx';
 import ErrorPage from './ErrorPage.jsx';
+import Home from './Home.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/shop",
         element: <Shop />
