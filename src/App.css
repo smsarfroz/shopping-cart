@@ -21,3 +21,7 @@ nav {
 * {
   outline: 2px dotted red;
 }
+.link {
+  text-decoration: none;
+  color: black;
+}
