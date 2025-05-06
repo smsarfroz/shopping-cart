@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import ItemCard from "./ItemCard";
 
 const Shop = () => {
-    const api = 'https://fakestoreapi.com/products';
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [itemArray, setItemArray] = useState([]); 
+    
+    const api = 'https://fakestoreapi.com/products';
     useEffect(() => {
         fetch(api, { mode: "cors" })
             .then((response) => {
@@ -19,9 +21,29 @@ const Shop = () => {
     }, []);
 
     console.log(itemArray);
+    if (loading) {
+        return (
+            <p>Loading...</p>
+        );
+    }
+
+    if (error) {
+        return (
+            <p>A network error was ecountered</p>
+        );
+    }
     return (
-        <div>
-            <h1>Hello from Shop page!</h1>
+        <div className="itemContainer">
+            {
+                itemArray.map((item) => {
+                    return (
+                        <ItemCard
+                            key={item.id}
+                            itemInfo={item}
+                        />
+                    );
+                })
+            }
         </div>
     )
 }
