@@ -1,17 +1,26 @@
-import { useState } from "react";
 
 function ItemCard({ itemInfo:
-    { image, category, title, price, rating:{rate, count} } }) {
-
-    const [qty, setQty] = useState(1);
+    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray }) {
 
     function handleDecrement() {
-        if (qty >= 2) {
-            setQty((qty) => (qty - 1));
+        if (qtyArray[id] >= 2) {
+            setQtyArray((prevArray) => prevArray.map((qty, index) => {
+                if (index === id) {
+                    return qty - 1;
+                } else {
+                    return qty;
+                }
+            }))
         }
     }
     function handleIncrement () {
-        setQty((qty) => (qty + 1));
+        setQtyArray((prevArray) => prevArray.map((qty, index) => {
+            if (index === id) {
+                return qty + 1;
+            } else {
+                return qty;
+            }
+        }))
     }
     function handleAddToCart() {
         
@@ -26,7 +35,7 @@ function ItemCard({ itemInfo:
             <p>stars: {rate} ({count})</p>
             <span>
                 <button onClick={handleDecrement}>-</button>
-                <input type="number" value={qty} />
+                <input type="number" value={qtyArray[id]} />
                 <button onClick={handleIncrement}>+</button>
             </span>
             

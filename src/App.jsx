@@ -1,8 +1,10 @@
 import './App.css'
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
 
 const App = () => {
+  const [qtyArray, setQtyArray] = useState(Array(20).fill(1));
   return (
     <div>
       <nav>
@@ -15,7 +17,7 @@ const App = () => {
           <button><Link to="/cart" className='link'>Cart</Link></button>
         </div>
       </nav>
-      <Outlet />
+      <Outlet context={{ qtyArray, setQtyArray }}/>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import { CiSearch } from "react-icons/ci";
+import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
   const [error, setError] = useState(null);
@@ -9,8 +10,10 @@ const Shop = () => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("allCategories");
 
+  const { qtyArray, setQtyArray } = useOutletContext();    
   const api = "https://fakestoreapi.com/products";
   useEffect(() => {
+    setQtyArray(Array(20).fill(1));  
     fetch(api, { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
@@ -75,7 +78,7 @@ const Shop = () => {
       <div className="itemContainer">
         {itemArray.map((item) => {
           return handleFilter(item) ? (
-            <ItemCard key={item.id} itemInfo={item} />
+            <ItemCard key={item.id} itemInfo={item} qtyArray={qtyArray} setQtyArray={setQtyArray} />
           ) : null;
         })}
       </div>
