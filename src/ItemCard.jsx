@@ -5,11 +5,16 @@ function ItemCard({ itemInfo:
 
     const [qty, setQty] = useState(1);
 
-    handleDecrement () {
-        setQty((qty) => (qty - 1));
+    function handleDecrement() {
+        if (qty >= 2) {
+            setQty((qty) => (qty - 1));
+        }
     }
-    handleIncrement () {
+    function handleIncrement () {
         setQty((qty) => (qty + 1));
+    }
+    function handleAddToCart() {
+        
     }
     return (
         <div className="itemCard">
@@ -17,7 +22,7 @@ function ItemCard({ itemInfo:
             <hr className="lineBreak"/>
             <p>{category}</p>
             <h2>{title}</h2>
-            <p>{price}</p>
+            <p> <span>&#36;</span> {price}</p>
             <p>stars: {rate} ({count})</p>
             <span>
                 <button onClick={handleDecrement}>-</button>
@@ -26,7 +31,7 @@ function ItemCard({ itemInfo:
             </span>
             
             <p>
-                <button><b>Add to Cart</b></button>
+                <button onClick={handleAddToCart}><b>Add to Cart</b></button>
             </p>
         </div>
     );

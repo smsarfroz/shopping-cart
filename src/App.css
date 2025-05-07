@@ -21,7 +21,7 @@ nav {
   gap: 4vw;
 }
 * {
-  /* outline: 2px dotted red; */
+  /* outline: 1px dotted red; */
 }
 .link {
   text-decoration: none;
@@ -35,8 +35,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .itemImage {
-  width: 10vw;
-  height: 10;
+  width: 12vw;
+  height: 13vw;
 }
 .itemCard {
   border: 3px solid blue;
@@ -52,4 +52,29 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 1vw;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+}
+
+.searchWrapper {
+  margin: 2vw 2vw;
+  position: relative;
+}
+.searchWrapper .searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+}
+
+.searchQuery {
+  padding-left: 20px;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+}
+#filterCategory {
+  height: 2vw;
+  margin-top: 1.7vw;
+  margin-right: 5vw;
 }
