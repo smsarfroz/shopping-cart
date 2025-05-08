@@ -1,29 +1,30 @@
+import { useState } from "react";
 
 function ItemCard({ itemInfo:
-    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray }) {
-
+    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray, orderedIds, setOrderedIds, total, setTotal }) {
+    
+    const [qnty, setQnty] = useState(1);
     function handleDecrement() {
         if (qtyArray[id] >= 2) {
-            setQtyArray((prevArray) => prevArray.map((qty, index) => {
-                if (index === id) {
-                    return qty - 1;
-                } else {
-                    return qty;
-                }
-            }))
+            setQnty((prevQnty) => prevQnty - 1);
         }
     }
-    function handleIncrement () {
+    function handleIncrement() {
+        setQnty((prevQnty) => prevQnty + 1);
+    }
+    function handleAddToCart() {
         setQtyArray((prevArray) => prevArray.map((qty, index) => {
             if (index === id) {
-                return qty + 1;
+                return qty + qnty;
             } else {
                 return qty;
             }
-        }))
-    }
-    function handleAddToCart() {
-        
+        }));
+        if (!orderedIds.includes(id)) {
+            setOrderedIds(prevArray => [...prevArray, id]);
+        }
+        setTotal((prevTotal) => prevTotal + qnty * price);
+        setQnty(1);
     }
     return (
         <div className="itemCard">
@@ -35,7 +36,7 @@ function ItemCard({ itemInfo:
             <p>stars: {rate} ({count})</p>
             <span>
                 <button onClick={handleDecrement}>-</button>
-                <input type="number" value={qtyArray[id]} />
+                <input type="number" value={qnty} />
                 <button onClick={handleIncrement}>+</button>
             </span>
             

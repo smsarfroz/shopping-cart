@@ -6,14 +6,23 @@ import { useOutletContext } from "react-router-dom";
 const Shop = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [itemArray, setItemArray] = useState([]);
+
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("allCategories");
 
-  const { qtyArray, setQtyArray } = useOutletContext();    
+  const {
+    qtyArray,
+    setQtyArray,
+    itemArray,
+    setItemArray,
+    orderedIds,
+    setOrderedIds,
+    total,
+    setTotal,
+  } = useOutletContext();
   const api = "https://fakestoreapi.com/products";
   useEffect(() => {
-    setQtyArray(Array(20).fill(1));  
+    setQtyArray(Array(20).fill(1));
     fetch(api, { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
@@ -78,7 +87,16 @@ const Shop = () => {
       <div className="itemContainer">
         {itemArray.map((item) => {
           return handleFilter(item) ? (
-            <ItemCard key={item.id} itemInfo={item} qtyArray={qtyArray} setQtyArray={setQtyArray} />
+            <ItemCard
+              key={item.id}
+              itemInfo={item}
+              qtyArray={qtyArray}
+              setQtyArray={setQtyArray}
+              orderedIds={orderedIds}
+              setOrderedIds={setOrderedIds}
+              total={total}
+              setTotal={setTotal}
+            />
           ) : null;
         })}
       </div>
