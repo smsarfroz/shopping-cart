@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 function ItemCard({ itemInfo:
-    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray, orderedIds, setOrderedIds, total, setTotal }) {
+    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray, orderedIds, setOrderedIds, setTotal }) {
     
     const [qnty, setQnty] = useState(1);
     function handleDecrement() {
-        if (qtyArray[id] >= 2) {
+        if (qtyArray[id-1] >= 2) {
             setQnty((prevQnty) => prevQnty - 1);
         }
     }
@@ -14,14 +14,14 @@ function ItemCard({ itemInfo:
     }
     function handleAddToCart() {
         setQtyArray((prevArray) => prevArray.map((qty, index) => {
-            if (index === id) {
+            if (index === id-1) {
                 return qty + qnty;
             } else {
                 return qty;
             }
         }));
-        if (!orderedIds.includes(id)) {
-            setOrderedIds(prevArray => [...prevArray, id]);
+        if (!orderedIds.includes(id-1)) {
+            setOrderedIds(prevArray => [...prevArray, id-1]);
         }
         setTotal((prevTotal) => prevTotal + qnty * price);
         setQnty(1);

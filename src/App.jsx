@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
 const App = () => {
-  const [qtyArray, setQtyArray] = useState(Array(20).fill(1));
+  const [qtyArray, setQtyArray] = useState(Array(20).fill(0));
   const [itemArray, setItemArray] = useState([]);
   const [orderedIds, setOrderedIds] = useState([]);
   const [total, setTotal] = useState(0);

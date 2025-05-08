@@ -22,7 +22,7 @@ const Shop = () => {
   } = useOutletContext();
   const api = "https://fakestoreapi.com/products";
   useEffect(() => {
-    setQtyArray(Array(20).fill(1));
+    setQtyArray(Array(20).fill(0));
     fetch(api, { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {

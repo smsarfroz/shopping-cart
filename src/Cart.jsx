@@ -3,6 +3,10 @@ import { useOutletContext } from "react-router-dom";
 const Cart = () => {
     const { qtyArray, setQtyArray, itemArray, orderedIds, setOrderedIds, total, setTotal } = useOutletContext();
     
+    console.log('qtyArray');
+    console.log(qtyArray);
+    console.log('orderedIds');
+    console.log(orderedIds);
     function handleDecrement(id) {
         setQtyArray((prevArray) => prevArray.map((qty, index) => {
             if (index === id) {
@@ -34,24 +38,26 @@ const Cart = () => {
         <div>
             <h1>Your Cart</h1>
             {
-                orderedIds.map((id) => {
-                    <div className="cartItem">
-                        <img src={itemArray[id].image} alt="" />
-                        <p>{itemArray[id].title}</p>
-                        <p>
-                            <button onClick={() => handleDecrement(id)}>-</button>
-                            {qtyArray[id]}
-                            <button onClick={() => handleIncrement(id)}>+</button>
-                        </p>
-                        <button>delete</button>
-                        <p>${qtyArray[id] * itemArray[id].price}</p>
-                    </div>
+                orderedIds.map((i) => {
+                    return (
+                        <div className="cartItem">
+                            <img src={itemArray[i].image} alt="" />
+                            <p>{itemArray[i].title}</p>
+                            <p>
+                                <button onClick={() => handleDecrement(i)}>-</button>
+                                {qtyArray[i]}
+                                <button onClick={() => handleIncrement(i)}>+</button>
+                            </p>
+                            <button>delete</button>
+                            <p>$ {Math.round(qtyArray[i] * itemArray[i].price * 100) / 100}</p>
+                        </div>
+                    );
                 })
             }
 
             <br />
 
-            <p><b>Total: $</b>{total}</p>
+            <p><b>Total: $</b>{Math.round(total * 100) / 100}</p>
         </div>
     );
 }
