@@ -9,26 +9,22 @@ const Cart = () => {
     console.log('orderedIds');
     console.log(orderedIds);
     function handleDecrement(id) {
-        const updateQtyArray = async () => {
-            await setQtyArray((prevArray) => prevArray.map((qty, index) => {
-                if (index === id) {
-                    return qty - 1;
-                } else {
-                    return qty;
-                }
-            }));
-            console.log(`id =${id}, qtyArray[id]=${qtyArray[id]}`);
-            if (qtyArray[id] === 0) {
-                setOrderedIds((prevArray) => prevArray.filter(idx => {
-                    if (idx !== id) {
-                        return idx;
-                    }
-                }))
+        const newArray = qtyArray.map((qty, index) => {
+            if (index === id) {
+                return qty - 1;
+            } else {
+                return qty;
             }
-        }
-        updateQtyArray();
+        })
+        setQtyArray(newArray);
         setTotal(prevTotal => prevTotal - itemArray[id].price);
-        
+        if (newArray[id] === 0) {
+            setOrderedIds((prevArray) => prevArray.filter(idx => {
+                if (idx !== id) {
+                    return idx;
+                } 
+            }))
+        }
     }
     function handleIncrement(id) {
         setQtyArray((prevArray) => prevArray.map((qty, index) => {
