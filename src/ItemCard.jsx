@@ -5,7 +5,7 @@ function ItemCard({ itemInfo:
     
     const [qnty, setQnty] = useState(1);
     function handleDecrement() {
-        if (qtyArray[id-1] >= 2) {
+        if (qnty >= 2) {
             setQnty((prevQnty) => prevQnty - 1);
         }
     }

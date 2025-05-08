@@ -78,3 +78,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 1.7vw;
   margin-right: 5vw;
 }
+
+.cartItem {
+  border: 2px solid black;
+}
+.cartImage {
+  height: 5vw;
+  width: 5vw;
+}
+
+.cartPage {
+  padding: 2vw 2vw;
+}
