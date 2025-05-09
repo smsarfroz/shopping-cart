@@ -8,6 +8,14 @@ const App = () => {
   const [itemArray, setItemArray] = useState([]);
   const [orderedIds, setOrderedIds] = useState([]);
   const [total, setTotal] = useState(0);
+  
+  function totalItemsInCart() {
+    let totQty = 0;
+    qtyArray.forEach(element => {
+      totQty += element;
+    });
+    return totQty;
+  }
   return (
     <div>
       <nav>
@@ -17,7 +25,7 @@ const App = () => {
           <button><Link to="/shop" className='link'>Shop</Link></button>
         </div>
         <div className="cart">
-          <button><Link to="/cart" className='link'>Cart</Link></button>
+          <button><Link to="/cart" className='link'>Cart { totalItemsInCart }</Link></button>
         </div>
       </nav>
       <Outlet context={{ qtyArray, setQtyArray, itemArray, setItemArray, orderedIds, setOrderedIds, total, setTotal }}/>
