@@ -58,8 +58,12 @@ function ItemCard({
           tabIndex={0}
           type="number"
           value={qnty}
-          onChange={(e) => setQnty(parseInt(e.target.value))}
-          onBlur={(e) => (e.target.value === "" ? 1 : e.target.value)}
+          onChange={(e) => {
+            setQnty(parseInt(e.target.value));
+          }}
+          onBlur={(e) => {
+            setQnty(e.target.value == "" ? 1 : parseInt(e.target.value));
+          }}
         />
         <button onClick={handleIncrement}>+</button>
       </span>
