@@ -1,5 +1,7 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -14,22 +16,27 @@ nav {
   padding: 1vw 1vw;
   /* background-color: rgb(125, 169, 234); */
   background: #554af0;
-  background: linear-gradient(90deg, rgba(85, 74, 240, 1) 0%, rgba(73, 73, 201, 1) 35%, rgba(255, 0, 89, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(85, 74, 240, 1) 0%,
+    rgba(73, 73, 201, 1) 35%,
+    rgba(255, 0, 89, 1) 100%
+  );
 }
 .pages {
   display: flex;
   gap: 4vw;
 }
 * {
-  /* outline: 1px dotted red; */
+  outline: 0.4px dotted black;
 }
 .link {
   text-decoration: none;
   color: black;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -89,4 +96,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cartPage {
   padding: 2vw 2vw;
+}
+
+.cartButton {
+  width: 80px;
+  height: 25px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 1px red;
+  background-color: #554af0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

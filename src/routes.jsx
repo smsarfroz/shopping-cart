@@ -5,22 +5,22 @@ import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
 
 const routes = [
-    {
+  {
     path: "/",
     element: <App />,
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/shop",
-        element: <Shop />
+        element: <Shop />,
       },
       {
         path: "/cart",
-        element: <Cart />
-      }
+        element: <Cart />,
+      },
     ],
     errorElement: <ErrorPage />,
   },
