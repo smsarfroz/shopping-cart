@@ -35,9 +35,9 @@ const App = () => {
         <div className="cart">
           <button className="cartButton">
             <Link to="/cart" className="link">
-              Cart 
+              <p>Cart </p>
+              <div className="circle">{totalItemsInCart()}</div>
             </Link>
-            <div className="circle">{totalItemsInCart()}</div>
           </button>
         </div>
       </nav>

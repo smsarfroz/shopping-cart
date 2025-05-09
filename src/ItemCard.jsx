@@ -54,7 +54,13 @@ function ItemCard({
       </p>
       <span>
         <button onClick={handleDecrement}>-</button>
-        <input type="number" value={qnty} />
+        <input
+          tabIndex={0}
+          type="number"
+          value={qnty}
+          onChange={(e) => setQnty(parseInt(e.target.value))}
+          onBlur={(e) => (e.target.value === "" ? 1 : e.target.value)}
+        />
         <button onClick={handleIncrement}>+</button>
       </span>
 
