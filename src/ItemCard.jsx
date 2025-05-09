@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ItemCard({ itemInfo:
-    { id, image, category, title, price, rating:{rate, count} }, qtyArray, setQtyArray, orderedIds, setOrderedIds, setTotal }) {
+    { id, image, category, title, price, rating:{rate, count} }, setQtyArray, orderedIds, setOrderedIds, setTotal }) {
     
     const [qnty, setQnty] = useState(1);
     function handleDecrement() {
