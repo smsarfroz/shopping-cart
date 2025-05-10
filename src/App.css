@@ -14,14 +14,9 @@ nav {
   grid-template-columns: 2fr 4fr 0.4fr;
   align-items: center;
   padding: 1vw 1vw;
-  /* background-color: rgb(125, 169, 234); */
-  background: #554af0;
-  background: linear-gradient(
-    90deg,
-    rgba(85, 74, 240, 1) 0%,
-    rgba(73, 73, 201, 1) 35%,
-    rgba(255, 0, 89, 1) 100%
-  );
+  background: none;
+  background: #020024;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
 .pages {
   display: flex;
@@ -65,7 +60,7 @@ input[type="number"]::-webkit-outer-spin-button {
   transition-duration: 0.4s;
 }
 .button:hover {
-  background-color: rgb(184, 115, 153);
+  background-color: rgb(151, 197, 247);
   color: #554af0;
 }
 nav {
@@ -86,4 +81,45 @@ nav {
 }
 * {
   /* outline: 0.4px dotted black; */
+}
+.homePage {
+  height: 89vh;
+  background-image: url('/public/jonathan.jpg');
+  background-size: cover;
+  /* background-position: center; */
+  padding-left: 4vw;
+  padding-top: 2vw;
+}
+
+.description {
+  color: rgb(234, 101, 143);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vw;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.shopButton {
+  background-color: #ffffff;
+  border: none;
+  margin-top: 2vw;
+  width: 15vw;
+  height: 2.7vw;
+  display: flex;
+  justify-content: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  transition: 0.3s all;
+  color: black;
+}
+.link {
+  color: black;
+  font-family:sans-serif;
+}
+.shopButton:hover {
+  background-color: rgb(248, 160, 160);
+}
+.shopButton:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
