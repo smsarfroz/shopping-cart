@@ -1,8 +1,49 @@
 .cartPage {
     padding: 2vw 2vw;
 }
-.cartContainer {
-    /* display: flex;
+.title {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.cartItem {
+    border: 2px solid black;
+    width: 60vw;
+    display: grid;
+    align-items: center;
+    gap: 2vw;
+    padding: 1vw 1vw;
+    grid-template-columns: 1fr 5fr 1fr 0.3fr 1fr;
+    color: blue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.totContainer {
+    margin-left: 17.5vw;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between; */
+    gap: 1vw;
+    margin-top: 2vw;
+}
+.payNowButton {
+    width: 7vw;
+    height: 2vw;
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(106, 106, 223);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cartImage {
+    height: 5vw;
+    width: 5vw;
+}
+.cartItemContainer {
+    display: flex;
+    gap: 2vw;
+    flex-direction: column;
+    margin-top: 1vw;
+    align-items: center;
+}
+.total {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

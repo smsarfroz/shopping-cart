@@ -73,33 +73,37 @@ const Cart = () => {
     <div className={styles.cartPage}>
       {orderedIds.length ? (
         <div className={styles.cartContainer}>
-          <h1>Your Cart</h1>
-          {orderedIds.map((i) => {
-            return (
-              <div className="cartItem" key={i + 1}>
-                <img className="cartImage" src={itemArray[i].image} alt="" />
-                <p>{itemArray[i].title}</p>
-                <p>
-                  <button onClick={() => handleDecrement(i)}>-</button>
-                  {qtyArray[i]}
-                  <button onClick={() => handleIncrement(i)}>+</button>
-                </p>
-                <button onClick={() => handleDelete(i)}>
-                  <MdOutlineDeleteOutline />
-                </button>
-                <p>
-                  $ {Math.round(qtyArray[i] * itemArray[i].price * 100) / 100}
-                </p>
-              </div>
-            );
-          })}
+          <h1 className={styles.title}>Your Cart</h1>
+          <div className={styles.cartItemContainer}>
+            {orderedIds.map((i) => {
+              return (
+                <div className={styles.cartItem} key={i + 1}>
+                  <img className={styles.cartImage} src={itemArray[i].image} alt="" />
+                  <p>{itemArray[i].title}</p>
+                  <p>
+                    <button onClick={() => handleDecrement(i)}>-</button>
+                    {qtyArray[i]}
+                    <button onClick={() => handleIncrement(i)}>+</button>
+                  </p>
+                  <button onClick={() => handleDelete(i)}>
+                    <MdOutlineDeleteOutline />
+                  </button>
+                  <p>
+                    $ {Math.round(qtyArray[i] * itemArray[i].price * 100) / 100}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
           <br />
 
-          <p>
-            <b>Total: $</b>
-            {Math.round(total * 100) / 100}
-          </p>
-          <button>Pay Now</button>
+          <div className={styles.totContainer}>
+            <p className={styles.total}>
+              <b>Total: $</b>
+              {Math.round(total * 100) / 100}
+            </p>
+          <button className={styles.payNowButton}>Pay Now</button>
+          </div>
         </div>
       ) : (
         <h2>
