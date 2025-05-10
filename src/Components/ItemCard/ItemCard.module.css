@@ -1,10 +1,30 @@
 .itemImage {
     width: 12vw;
     height: 13vw;
+    display: block;
+    margin: auto;
+    /* width: 70%; */
+    margin-bottom: 1vw;
 }
 
 .itemCard {
-    border: 3px solid blue;
+    border: 1px solid blue;
+    border-radius: 4px;
     width: 20vw;
     padding: 1vw 2vw;
+    transition: transform .3s ease-in-out;
+}
+.itemCard:hover {
+    transform: scale(1.04);
+}
+
+.lineBreak {
+    opacity: 30%;
+    margin-bottom: 1vw;
+}
+.category {
+    margin-bottom: 1.5vw;
+}
+.title {
+    text-overflow: ellipsis;
 }

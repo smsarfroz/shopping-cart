@@ -60,11 +60,11 @@ const Shop = () => {
   }
   return (
     <>
-      <div className="filterContainer">
-        <div className="searchWrapper">
-          <CiSearch className="searchIcon" />
+      <div className={styles.filterContainer}>
+        <div className={styles.searchWrapper}>
+          <CiSearch className={styles.searchIcon} />
           <input
-            className="searchQuery"
+            className={styles.searchQuery}
             type="text"
             value={query}
             placeholder="Search products..."
@@ -73,7 +73,7 @@ const Shop = () => {
         </div>
         <select
           name=""
-          id="filterCategory"
+          id={styles.filterCategory}
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
@@ -84,7 +84,7 @@ const Shop = () => {
           <option value="electronics">Electronics</option>
         </select>
       </div>
-      <div className="itemContainer">
+      <div className={styles.itemContainer}>
         {itemArray.map((item) => {
           return handleFilter(item) ? (
             <ItemCard

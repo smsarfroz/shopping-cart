@@ -1,0 +1,33 @@
+.filterContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.searchWrapper {
+    margin: 2vw 5vw;
+    position: relative;
+}
+
+.searchWrapper .searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+}
+.searchQuery {
+    padding-left: 20px;
+    height: 3vw;
+    border-radius: 5px;
+}
+#filterCategory {
+    height: 3vw;
+    margin-top: 1.7vw;
+    margin-right: 6vw;
+    border-radius: 5px;
+}
+.itemContainer {
+    padding: 2vw 5vw;
+    display: grid;
+    gap: 1.5vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}

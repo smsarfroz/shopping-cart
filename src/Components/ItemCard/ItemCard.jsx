@@ -43,9 +43,12 @@ function ItemCard({
   return (
     <div className={styles.itemCard}>
       <img src={image} alt="" className={styles.itemImage} />
-      <hr className="lineBreak" />
-      <p>{category}</p>
-      <h2>{title}</h2>
+      <span> </span>
+      <hr className={styles.lineBreak} />
+      <p className={styles.category}>{category}</p>
+      <div className={styles.title}>
+        <h3>{title}</h3>
+      </div>
       <p>
         {" "}
         <span>&#36;</span> {price}
