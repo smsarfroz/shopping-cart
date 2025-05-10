@@ -1,0 +1,10 @@
+.itemImage {
+    width: 12vw;
+    height: 13vw;
+}
+
+.itemCard {
+    border: 3px solid blue;
+    width: 20vw;
+    padding: 1vw 2vw;
+}

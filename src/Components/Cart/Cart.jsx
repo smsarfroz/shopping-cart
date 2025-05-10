@@ -1,5 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
+import styles from "./Cart.module.css";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 
 const Cart = () => {
   const {
@@ -68,9 +70,9 @@ const Cart = () => {
     );
   }
   return (
-    <div className="cartPage">
+    <div className={styles.cartPage}>
       {orderedIds.length ? (
-        <>
+        <div className={styles.cartContainer}>
           <h1>Your Cart</h1>
           {orderedIds.map((i) => {
             return (
@@ -82,7 +84,9 @@ const Cart = () => {
                   {qtyArray[i]}
                   <button onClick={() => handleIncrement(i)}>+</button>
                 </p>
-                <button onClick={() => handleDelete(i)}>delete</button>
+                <button onClick={() => handleDelete(i)}>
+                  <MdOutlineDeleteOutline />
+                </button>
                 <p>
                   $ {Math.round(qtyArray[i] * itemArray[i].price * 100) / 100}
                 </p>
@@ -95,7 +99,8 @@ const Cart = () => {
             <b>Total: $</b>
             {Math.round(total * 100) / 100}
           </p>
-        </>
+          <button>Pay Now</button>
+        </div>
       ) : (
         <h2>
           Your cart is empty. <Link to="/shop">Go to Shop</Link>

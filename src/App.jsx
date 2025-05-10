@@ -2,6 +2,7 @@ import "./App.css";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
+import { CiShoppingCart } from "react-icons/ci";
 
 const App = () => {
   const [qtyArray, setQtyArray] = useState(Array(20).fill(0));
@@ -19,14 +20,14 @@ const App = () => {
   return (
     <div>
       <nav>
-        <h2>Shopping Cart App</h2>
+        <b className="Title">Shopping Cart App</b>
         <div className="pages">
-          <button>
+          <button className="button">
             <Link to="/" className="link">
               Home
             </Link>
           </button>
-          <button>
+          <button className="button">
             <Link to="/shop" className="link">
               Shop
             </Link>
@@ -35,7 +36,7 @@ const App = () => {
         <div className="cart">
           <button className="cartButton">
             <Link to="/cart" className="link">
-              <p>Cart </p>
+              <CiShoppingCart />
               <div className="circle">{totalItemsInCart()}</div>
             </Link>
           </button>

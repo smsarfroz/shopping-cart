@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import ItemCard from "./ItemCard";
+import ItemCard from "../ItemCard/ItemCard";
 import { CiSearch } from "react-icons/ci";
 import { useOutletContext } from "react-router-dom";
+import styles from "./Shop.module.css";
 
 const Shop = () => {
   const [error, setError] = useState(null);

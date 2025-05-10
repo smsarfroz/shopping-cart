@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ItemCard.module.css"
 
 function ItemCard({
   itemInfo: {
@@ -40,8 +41,8 @@ function ItemCard({
     setQnty(1);
   }
   return (
-    <div className="itemCard">
-      <img src={image} alt="" className="itemImage" />
+    <div className={styles.itemCard}>
+      <img src={image} alt="" className={styles.itemImage} />
       <hr className="lineBreak" />
       <p>{category}</p>
       <h2>{title}</h2>
@@ -59,11 +60,11 @@ function ItemCard({
           type="number"
           value={qnty}
           onChange={(e) => {
-            setQnty(parseInt(e.target.value));
+            setQnty(e.target.value == "" ? "" : parseInt(e.target.value));
           }}
           onBlur={(e) => {
             setQnty(e.target.value == "" ? 1 : parseInt(e.target.value));
-          }}
+          }}      
         />
         <button onClick={handleIncrement}>+</button>
       </span>
