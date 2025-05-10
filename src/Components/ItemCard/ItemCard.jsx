@@ -46,22 +46,21 @@ function ItemCard({
       <span> </span>
       <hr className={styles.lineBreak} />
       <p className={styles.category}>{category}</p>
-      <div className={styles.title}>
-        <h3>{title}</h3>
-      </div>
-      <p>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.price}>
         {" "}
         <span>&#36;</span> {price}
       </p>
       <p>
-        stars: {rate} ({count})
+        <b>stars:</b> {rate} ({count})
       </p>
-      <span>
+      <span className={styles.editQtyContainer}>
         <button onClick={handleDecrement}>-</button>
         <input
           tabIndex={0}
           type="number"
           value={qnty}
+          className={styles.inputQty}
           onChange={(e) => {
             setQnty(e.target.value == "" ? "" : parseInt(e.target.value));
           }}
@@ -73,7 +72,7 @@ function ItemCard({
       </span>
 
       <p>
-        <button onClick={handleAddToCart}>
+        <button onClick={handleAddToCart} className={styles.addToCartButton}>
           <b>Add to Cart</b>
         </button>
       </p>
