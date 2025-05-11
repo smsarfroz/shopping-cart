@@ -92,13 +92,15 @@ nav {
 }
 
 .description {
-  color: rgb(234, 101, 143);
+  /* color: rgb(234, 101, 143); */
+  color: white;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 0.6vw;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .shopButton {
   background-color: #ffffff;
   border: none;
