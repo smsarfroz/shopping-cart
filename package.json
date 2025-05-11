@@ -11,6 +11,8 @@
     "test": "vitest"
   },
   "dependencies": {
+    "form-data": "^4.0.2",
+    "module_name": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.3"
