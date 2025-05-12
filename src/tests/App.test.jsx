@@ -3,7 +3,7 @@ import { render, screen, waitFor, within } from "@testing-library/react";
 import App from "../App";
 import userEvent from '@testing-library/user-event';
 import Home from '../Home';
-import { BrowserRouter, createMemoryRouter, createBrowserRouter, RouterProvider } from 'react-router';
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router';
 import routes from '../routes';
 import { MemoryRouter } from 'react-router';
 
