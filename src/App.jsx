@@ -20,7 +20,6 @@ const App = () => {
     return totQty;
   }
   return (
-      <Router>
         <div>
           <nav>
             <b className="Title">Shopping Cart App</b>
@@ -58,7 +57,6 @@ const App = () => {
             }}
           />
         </div>
-      </Router>
   );
 };
 
