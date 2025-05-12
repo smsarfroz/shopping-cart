@@ -1,5 +1,5 @@
 import "./App.css";
-import { Link } from "react-router-dom";
+import { Link, MemoryRouter } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
@@ -19,7 +19,6 @@ const App = () => {
     return totQty;
   }
   return (
-    <BrowserRouter>
       <div>
         <nav>
           <b className="Title">Shopping Cart App</b>
@@ -57,7 +56,6 @@ const App = () => {
           }}
         />
       </div>
-    </BrowserRouter>
   );
 };
 

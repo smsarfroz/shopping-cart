@@ -84,7 +84,7 @@ nav {
 }
 .homePage {
   height: 89vh;
-  background-image: url('/public/jonathan.jpg');
+  background-image: url('/jonathan.jpg');
   background-size: cover;
   /* background-position: center; */
   padding-left: 4vw;
