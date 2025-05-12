@@ -3,8 +3,9 @@ import { render, screen } from "@testing-library/react";
 import App from "../App";
 import userEvent from '@testing-library/user-event';
 import Home from '../Home';
-import { BrowserRouter, createMemoryRouter, MemoryRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, createMemoryRouter, RouterProvider } from 'react-router';
 import routes from '../routes';
+import { MemoryRouter } from 'react-router';
 
 describe('App', () => {
     it('true to be true', () => {
@@ -20,7 +21,9 @@ describe('App', () => {
         const user = userEvent.setup();
 
         render(
-            <App />
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         );
         const homeButton = screen.getByRole('button', { name: 'Home' });
         expect(homeButton).toHaveClass('button');

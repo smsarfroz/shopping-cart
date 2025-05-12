@@ -1,5 +1,5 @@
-import { useOutletContext } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router";
+import { Link } from "react-router";
 import styles from "./Cart.module.css";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
