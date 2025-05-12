@@ -36,7 +36,7 @@ const App = () => {
               </button>
             </div>
             <div className="cart">
-              <button className="cartButton">
+              <button className="cartButton" data-testid="cart-button">
                 <Link to="/cart" className="link">
                   <CiShoppingCart />
                   <div className="circle">{totalItemsInCart()}</div>

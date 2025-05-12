@@ -40,6 +40,7 @@ exports[`App > renders App component 1`] = `
       >
         <button
           class="cartButton"
+          data-testid="cart-button"
         >
           <a
             class="link"
